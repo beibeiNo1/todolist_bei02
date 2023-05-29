@@ -1,5 +1,5 @@
 # todolist
-todolist 02
+todolist 02 小测试
 ## Project setup
 ```
 npm install
