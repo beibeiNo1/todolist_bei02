@@ -1,15 +1,17 @@
 <template>
   <div class="container">
-    <Category />
+    <Search/>
+    <List/>
   </div>
 </template>
 
 <script>
-import Category from './components/Category.vue'
+import Search from './components/Search.vue'
+import List from './components/List.vue'
 export default {
   name: 'App',
   components: {
-    Category,
+    Search, List,
   },
 }
 </script>
