@@ -18,7 +18,7 @@ module.exports = defineConfig({
         pathRewrite: { '^/demo': '' },
         ws: true,
         changeOrigin: true
-      }
+      },
     }
   }
 })
