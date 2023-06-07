@@ -1,6 +1,6 @@
 # todolist
 todolist 02 小测试
-vue2完结了
+vue2完结了啊
 ## Project setup
 ```
 npm install
