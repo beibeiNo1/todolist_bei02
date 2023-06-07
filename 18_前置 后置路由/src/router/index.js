@@ -11,7 +11,7 @@ const router = new VueRouter({
             name: 'guanyu',
             path: '/about',
             component: About,
-            meta: { isAuth: false, title: '关于' },
+            meta: {isAuth: false,title: '关于'},
         },
         {
             name: 'zhuye',
@@ -24,19 +24,6 @@ const router = new VueRouter({
                     path: 'news',
                     component: News,
                     meta: { isAuth: true, title: '新闻' },
-                    //独享路由守卫
-                    // beforeEnter(to,from,next) {
-                    //     if (to.meta.isAuth) {
-                    //         if (localStorage.getItem('school') === 'atguigu') {
-                    //             next()
-                    //         } else {
-                    //             alert('无权限')
-                    //             return
-                    //         }
-                    //     }
-                    //     next()
-
-                    // },
                 },
                 {
                     name: 'xiaoxi',
@@ -50,7 +37,7 @@ const router = new VueRouter({
                             path: 'detail',
                             component: Detail,
                             meta: { isAuth: true, title: '详情' },
-                            props($route) {
+                            props($route){
                                 return {
                                     id: $route.query.id,
                                     name: $route.query.name,
@@ -64,19 +51,19 @@ const router = new VueRouter({
     ]
 })
 
-// router.beforeEach((to, from , next)=>{
-//     // if(to.path==='/home/message' || to.name==='xinwen'){
-//     if (to.meta.isAuth){
-//         if(localStorage.getItem('school')==='atguigu'){
-//             next()
-//         }else{
-//             alert('无权限')
-//             return
-//         }
-//     }
-//     next()
-// })
-router.afterEach((to, from) => {
+router.beforeEach((to, from , next)=>{
+    // if(to.path==='/home/message' || to.name==='xinwen'){
+    if (to.meta.isAuth){
+        if(localStorage.getItem('school')==='atguigu'){
+            next()
+        }else{
+            alert('无权限')
+            return
+        }
+    }
+    next()
+})
+router.afterEach((to,from)=>{
     document.title = to.meta.title
 })
-export default router
+export default  router

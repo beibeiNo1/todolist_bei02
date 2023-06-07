@@ -3,11 +3,10 @@
     <div>
         <ul>
             <li v-for="m in messageList" :key="m.id">
-                <input type="text">
             <!-- <router-link :to="`/home/message/detail/${m.id}/${m.name}`">
                     {{ m.name }}
                     </router-link> -->
-                <router-link replace :to="`/home/message/detail?id=${m.id}&name=${m.name}`">
+                <router-link :to="`/home/message/detail?id=${m.id}&name=${m.name}`">
                     {{ m.name }}
                 </router-link>
             <!-- <router-link :to="{
@@ -43,15 +42,13 @@ export default {
 
     computed: {},
 
-    mounted() { 
-        console.log(111);
-    },
-
-    methods: {},
+    mounted() { },
     beforeDestroy() {
-        console.log('Message销毁了');
+        console.log('message即将被销毁');
     },
 
+
+    methods: {}
 }
 
 </script>

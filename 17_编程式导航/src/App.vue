@@ -41,12 +41,6 @@ export default {
     Home,
     Banner,
   },
-  created(){
-    console.log(1111);
-  },
-  mounted(){
-    console.log(222);
-  },
 }
 </script>
 
